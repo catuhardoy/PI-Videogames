@@ -7,17 +7,17 @@ import { getVideogame } from "../../redux/actions";
 
 export default function SearchBar() {
 const dispatch = useDispatch()   
-const [name, setName] = useState("")
+const [name, setName] = useState("") //espero un string name
 
  
    const handleChange = (e) => {
-      setName(e.target.value)  // el value del input va a tomar el value del state
+      setName(e.target.value)  // el value del input va a tomar el value del state. Setea el name recibido para buscarlo
     }
-   const handleSubmit = (e) => {
+   const handleSubmit = (e) => {  // busca una vez que aprieto el boton
       e.preventDefault();
-      dispatch(getVideogame(name))
+      dispatch(getVideogame(name))  // despacaha la action que hace la busqued
 
-      setName ("")
+      setName ("")  // setea nuevamente el string vacio
    }  
   
    return (

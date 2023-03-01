@@ -5,7 +5,7 @@ import { postVideogame, getGenres} from "../../redux/actions";
 import style from "../Forms/forms.module.css"
 // import axios from "axios"
 
-function validate(form) {
+function validate(form) {  // funcion para validar el formulario
     let error = {};
     if (!form.name) {
       error.name = "Name require";
@@ -31,14 +31,14 @@ function validate(form) {
 const Forms = () => {
     const dispatch = useDispatch();
     const history = useHistory();
-    const genres = useSelector((state) => state.genres);
+    const genres = useSelector((state) => state.genres);  // traigo el estado del reducer
 
 
-    const [errors, setErrors] = useState({
+    const [errors, setErrors] = useState({  // este es el estado de errores
         name: "",
         description: ""
-    })
-    const [form, setForm ]= useState({
+    })     
+    const [form, setForm ]= useState({   // seteamos estado del form. y pongo que contenido hay que agregar mediante el post
         name: "",
         description: "",
         released: "",
@@ -50,44 +50,43 @@ const Forms = () => {
             })
            
     useEffect(()=>{
-        dispatch(getGenres())
+        dispatch(getGenres())   // despacho esta accion para traerme los generos
     },[dispatch])             
 
     
-    const changeHandler = (e)=> { 
-      setErrors(
+    const changeHandler = (e)=> { // este habndler trae el evento para que me vaya trayendo lo que escribe el cliente en el form. 
+      setErrors(                  // primero le paso los errores para que primer vea si hay error y frene antes.
         validate({
             ...form,
             [e.target.name] : e.target.value
         })
         
     )
-    setForm ({
+    setForm ({  // si no hay errores que me setee el form
         ...form,
         [e.target.name]: e.target.value }) 
 }
     
-    const selectHandler = (e) => {
+    const selectHandler = (e) => {  // con este handler selecciono los distintos generos de videojuegos que tengo.
         const property = e.target.value
 
-        // form.genres.push(property)
         setForm({
             ...form,
             genres:[...form.genres, property] 
         })
-        // console.log(form.genres)
+     
     }
 
-    const selectPlatformsHandler = (e) => {
+    const selectPlatformsHandler = (e) => {  // handler para seleccionar las distintas plataformas que tengo
         const property = e.target.value
         setForm({
             ...form,
             platforms:[...form.platforms, property] 
         })
-        // form.platforms.push(property)
+        
 
     }
-    const submitHandler = (e) =>{ // aca quiero mandar una request al backend.
+    const submitHandler = (e) =>{ // aca quiero mandar una request al backend. Maneja el boton de SUBMIT
         e.preventDefault()
         setErrors(
             validate({
@@ -95,12 +94,12 @@ const Forms = () => {
                 [e.target.name] : e.target.value
             })
         ) 
-        if (Object.keys(errors).length === 0) {
+        if (Object.keys(errors).length === 0) {  // si el form no maneja errores, 
             console.log(form)
-            dispatch(postVideogame(form));
+            dispatch(postVideogame(form));        // despacho la accion del formulario y genero una alerta de Videogame created!
             
             alert("Created videogame!");
-            setForm({
+            setForm({                         // vuelvo a setear los valores del formulario en string vacio, cero, etc.
               name: "",
               description: "",
               released: "",

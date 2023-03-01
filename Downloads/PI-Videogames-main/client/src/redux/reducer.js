@@ -5,7 +5,6 @@ import {GET_ALL_VIDEOGAMES,
         FILTER_CREATED, 
         ORDER_BY_NAME, 
         POST_VIDEOGAME, 
-        // GET_PLATFORMS,
         ORDER_BY_RATING,
         GET_DETAIL } from "./actions"
 

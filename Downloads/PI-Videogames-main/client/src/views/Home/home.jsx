@@ -13,7 +13,7 @@ const Home = ()=>{
     
     const genres = useSelector((state) => state.genres); // me conecta con el estado
     const allVideogames = useSelector((state) => state.videogames); // me tiene que llegar la data del estado inicial. me conecta con el estado
-            // esta constante es lo mismo que el maps state to props. El useSelector te trae lo que hay en el estado                                    
+                                                                    // esta constante es lo mismo que el maps state to props. El useSelector te trae lo que hay en el estado                                    
     const [order, setOrder] = useState('')      
                                                                         // me conecta con el estado
     const [currentPage, setCurrentPage] = useState(1); 
@@ -21,14 +21,7 @@ const Home = ()=>{
                                                        //es un estado local. le pido que me guarde el estado de la pagina actual. empieza en uno porque arranca desde la pag 1
     const [videogamesPerPage, setVideogamesPerPage] = useState(15);
 
-    // el hook es un corta camino
-
-    
-
-
-    // const paginado = (pageNumber)=> {   
-    //     setCurrentPage(pageNumber) 
-    // }                                
+    // el hook es un corta camino                        
 
     useEffect(()=>{
         dispatch(getAllVideogames())
@@ -75,16 +68,6 @@ const Home = ()=>{
                 <h1 key="home">
                    </h1>
                 <br />
-
-                {/* <div>
-                <Paginado 
-                        totalVideogames = {totalVideogames}
-                        currentPage = {currentPage}
-                        setCurrentPage={setCurrentPage}
-                        videogamesPerPage = {videogamesPerPage}
-
-                        />
-                    </div>     */}
 
            
             <button onClick = {e => {handleClick(e)}} className = {style.starthome} >

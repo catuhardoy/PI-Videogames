@@ -16,17 +16,17 @@ export const GET_DETAIL = "GET_DETAIL"
 export const getAllVideogames = () => {
     return async function(dispatch) { //espera la info de axios y desp despacha la action al reducer
         const apiData = await axios.get('http://localhost:3001/videogames'); // aca me conecto con el servidor (no con la bdd)
-        // const videogames = apiData.data; la saco y pongo en el payload directamente 
-       return dispatch ({type: GET_ALL_VIDEOGAMES, payload: apiData.data}); // ahora la accion fye despachada con un payload
+                                                                                // const videogames = apiData.data; la saco y pongo en el payload directamente 
+       return dispatch ({type: GET_ALL_VIDEOGAMES, payload: apiData.data}); // ahora armo la accion y es despachada con un payload
     };
 };
 
-export const getVideogame = (name) => {
-    return async function(dispatch) {
+export const getVideogame = (name) => {  // recibo nombre como parametro
+    return async function(dispatch) {   // se arma una fn asincrona y pongo try catch para que maneje errores
         try {
-            const apiData = await axios.get("http://localhost:3001/videogames?name=" + name)  // no va con backtiks
+            const apiData = await axios.get("http://localhost:3001/videogames?name=" + name);  // no va con backtiks
         
-            return dispatch ({type: "GET_VIDEOGAME", payload: apiData.data});
+            return dispatch ({type: "GET_VIDEOGAME", payload: apiData.data}); // despacho la peticion. Payload: api.data es la respuesta
             
         } catch (error) {
             alert("Videogame not found");

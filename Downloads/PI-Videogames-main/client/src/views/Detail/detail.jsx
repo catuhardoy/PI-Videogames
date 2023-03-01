@@ -39,7 +39,7 @@ const Detail = () =>{
                     <p className={style.detailplat}>Platforms: </p>
                     <h4>
                         {detail.platforms?.map((platform)=>(
-                            <ul>{platform}</ul>
+                            <p>{platform}</p>
                         ))}
                     </h4>
                 </div> 
@@ -50,7 +50,7 @@ const Detail = () =>{
             )}
         <div>
         <Link to = {'/home'}>
-            <button>Go Home</button>
+            <button className={style.detailbtn}>Go Home</button>
         </Link>
 
         </div>
