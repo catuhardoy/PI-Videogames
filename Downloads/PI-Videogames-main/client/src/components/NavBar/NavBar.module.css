@@ -1,0 +1,11 @@
+.mainContainer{
+    display: flex;
+    /* /* flex-direction: row; */
+    justify-content: space-around;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    color:rgb(58, 58, 58);
+   
+    background-image: url("http://slis.simmons.edu/blogs/unbound/files/2016/01/arcangel-super-mario-clouds.gif");
+    
+}

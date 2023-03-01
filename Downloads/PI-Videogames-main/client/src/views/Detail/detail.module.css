@@ -1,0 +1,24 @@
+.detailcont{
+    background-color:  rgb(217, 114, 255);
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    border: 2px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.detailgenres{
+    background-color:  rgb(217, 114, 255);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    text-align: center;
+
+}
+
+.detailplat{
+    background-color:  rgb(217, 114, 255);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    text-align: center;
+
+}
