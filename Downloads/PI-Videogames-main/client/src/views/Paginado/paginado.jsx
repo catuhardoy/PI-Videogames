@@ -18,6 +18,7 @@ export default function Paginado ({videogamesPerPage, totalVideogames, setCurren
 
     const onChange = (e)=>{
         setCurrentPage(Number(e.target.value)) // llamo al estado
+         // aca seteo un estado para que el paginado siempre aparezca en uno
      }
 
     return (
@@ -28,6 +29,7 @@ export default function Paginado ({videogamesPerPage, totalVideogames, setCurren
                 // </h3>
             ))}
         </div>
+        
     )
 };
 

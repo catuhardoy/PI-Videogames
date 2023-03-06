@@ -141,10 +141,13 @@ const Forms = () => {
                <br />
 
               <Link to="home"><button className={style.startforms}>BACK HOME</button></Link> 
-              <h1>CREATE YOUR OWN VIDEOGAME</h1>
+              <h1 className={style.animatedheading}>CREATE YOUR OWN VIDEOGAME</h1>
+              <br />
+              
               
                 <label>Name:</label>
                 <input 
+                className={style.boxes}
                  type="text" 
                  required
                  value={form.name} 
@@ -156,18 +159,17 @@ const Forms = () => {
 
             <div>
                 <label>Description:</label>
-                <input 
-                 type="text" 
-                 required
-                 value={form.description} 
-                 onChange={(e) => changeHandler(e)} 
-                 name="description"/>
+                <br/>
+                <br />
+                <textarea className={style.boxes} id="descrption" name="description" rows="7" cols="60" required value={form.description} 
+                 onChange={(e) => changeHandler(e)} ></textarea>
                  {errors.description && <p>{errors.description}</p>}
            </div>
                 <br />
            <div>
                 <label>Released:</label>
-                <input 
+                <input
+                 className={style.boxes} 
                  type="date"
                  required 
                  value={form.released} 
@@ -176,8 +178,9 @@ const Forms = () => {
            </div>
             <br />
            <div>
-                <label>Rating:</label>
-                <input 
+                <label>Rating: </label>
+                <input
+                 className={style.boxes} 
                  type="number" 
                  min = "1" 
                  max="5"  
@@ -185,22 +188,16 @@ const Forms = () => {
                  value={form.rating} 
                  onChange= {(e) => changeHandler(e)} 
                  name="rating"/>
-           </div>
-           <br />
-           
-           <div>
-               <label>Genres:</label>
-               <select onChange = {(e) => selectHandler(e)}>
+
+                <label>Genres: </label>
+               <select className={style.boxes} onChange = {(e) => selectHandler(e)}>
                    {genres.map((g)=>(
                        <option value={g.name}>{g.name}</option>
                     ) )}                                          
                </select>
-               <br />
-               
-           </div>
-           <div>
-            <label htmlFor="">Platforms:</label>
-                <select name="platforms" id="" onChange={(e)=>selectPlatformsHandler(e)}>
+
+               <label htmlFor="">Platforms: </label>
+                <select  className={style.boxes} name="platforms" id="" onChange={(e)=>selectPlatformsHandler(e)}>
                 <option value="Ps3">Ps3</option>
                 <option value="Ps4">Ps4</option>
                 <option value="Ps Vita">Ps Vita</option>
@@ -211,13 +208,11 @@ const Forms = () => {
                 <option value="PC">PC</option>
                 <option value="Linux">Linux</option>
                 </select>
-                <br />
-                
-            </div>  
-
+           </div>
+           <br />
            <div>
-               <label>Image</label>
-               <input type="text" 
+               <label>Image: </label>
+               <input className={style.boxes} type="text" 
                value={form.background_image} 
                onChange= {(e) => changeHandler(e)}
                name="background_image" />

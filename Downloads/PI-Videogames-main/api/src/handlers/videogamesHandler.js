@@ -28,23 +28,7 @@ const getVideogamesHandler = async (req, res) => {
     }
 }
 
-// const getVideogameHandler = async (req, res)=> {
-//     const {id} = req.params;
-//     try {
-//         if(isNaN(id)){
-//             let dbVideogame = await getVideogamesById(id);
-//             res.status(200).json(dbVideogame)
-//         }else{
-//             let apiVideogame = await get(id);
-//             res.status(200).json(apiVideogame)
-//         }
-//         } catch (error) {
-//         res.status(404).json({error : error.message})
-//     }
-// };
-    
-
-     
+         
 //    
 
 const createVideogamesHandler = async (req, res)=> {
@@ -59,7 +43,7 @@ const createVideogamesHandler = async (req, res)=> {
      } = req.body
 
 
-     let newVideogame = await Videogame.create({
+     let newVideogame = await Videogame.create({  // Esta funcion es asincrona porque tengo que esperar que me llegue la data del body y que busque los generos que yo le estoy aplicando en el body// 
         name, 
         description, 
         released, 
@@ -68,7 +52,7 @@ const createVideogamesHandler = async (req, res)=> {
         created,
         platforms})
       
-    let dbGenre = await Genre.findAll({
+    let dbGenre = await Genre.findAll({   // asocia el juego que estoy creando con el genero que le pasan por body.
             where: {
               name: genres
             }
@@ -78,7 +62,9 @@ const createVideogamesHandler = async (req, res)=> {
     await newVideogame.addGenre(dbGenre)
     res.status(201).send(newVideogame)
          
-}
+}// el paginado el estado, el estado tengo q setearlo en uno
+//quiero ver el q tiene rating lo q tiene entre 4 y 5
+
 
 
 module.exports = {createVideogamesHandler,getVideogamesHandler} 

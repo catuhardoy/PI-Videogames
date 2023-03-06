@@ -6,7 +6,8 @@ import {GET_ALL_VIDEOGAMES,
         ORDER_BY_NAME, 
         POST_VIDEOGAME, 
         ORDER_BY_RATING,
-        GET_DETAIL } from "./actions"
+        GET_DETAIL, 
+        DETAIL_REMOVE } from "./actions"
 
 const initialState = {
     videogames: [],
@@ -120,11 +121,21 @@ const RootReducer = (state = initialState, action)=>{  // funcion que sabe que h
               ...state
           }
   
-        case  GET_DETAIL:
+      case  GET_DETAIL:
             return{
               ...state,
                 detail : action.payload
             }    
+      case DETAIL_REMOVE:
+              return{
+                  ...state, 
+                  detail: action.payload
+            }
+            case "DELETE_VIDEOGAME":{
+              return{
+                  ...state
+              }
+          }            
     
 default :
     return {...state}

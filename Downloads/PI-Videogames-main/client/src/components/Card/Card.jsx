@@ -13,7 +13,7 @@ const Card = ({name, id, background_image, genres, rating})=>{  // traigo las pr
          <div>
             <img src={background_image} alt="notfound" width= "200px" height="250px"/>
             <Link to = {`/detail/${id}`}>
-            <h3>Name: {name}</h3>
+            <h3>{name}</h3>
             </Link>
         </div> 
         
@@ -24,7 +24,7 @@ const Card = ({name, id, background_image, genres, rating})=>{  // traigo las pr
              )) 
             }   
         </h5>
-        {/* <h4>Rating:{rating} </h4> */}
+        <h4 className={style.rating}>Rating ⭑ {rating} </h4>
         
 
     </div>

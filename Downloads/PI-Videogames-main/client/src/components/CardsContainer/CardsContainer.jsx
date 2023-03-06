@@ -20,6 +20,7 @@ const CardsContainer = ({videogamesPerPage, currentPage, totalVideogames})=>{
 
     return (
         <div className={style.container}>
+           
 
             
            {videogames.slice(start, end).map((videogame) => (
@@ -34,7 +35,7 @@ const CardsContainer = ({videogamesPerPage, currentPage, totalVideogames})=>{
                genres = {videogame.genres}
                />
            ))}
-          
+           <div className={style.superposicion}></div>
         </div>
     )
    

@@ -14,8 +14,19 @@ const getVideogameHandler = async (req, res)=> {
         res.status(404).json({error : error.message})
     }
 };
+
+const deleteVideogameHandler = async(req, res)=>{
+    const {id} = req.params
+
+    try {
+        await deleteVideogame(id)
+        res.status(200).send("Videogame removed")
+    } catch (error) {
+        res.status(404).json(error)
+    }
+}
     
-module.exports = {getVideogameHandler}
+module.exports = {getVideogameHandler, deleteVideogameHandler}
 
 
 

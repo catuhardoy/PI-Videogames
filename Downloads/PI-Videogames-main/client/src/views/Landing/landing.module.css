@@ -1,50 +1,86 @@
 @font-face {
-  font-family: 'game_over';
-  src: url("../fonts/game_over.ttf") format('truetype')
+  font-family: 'mario';
+  src: url("../fonts/Super Mario Bros. 2.ttf") format('truetype')
 }
 
-
 .body {
-    
-    background-image: url("https://media4.giphy.com/media/3oEjHYlwvUK5p9AIbm/giphy.gif");
-    background-size:cover;
-    background-position: center;
-    background-repeat: no-repeat; 
+    background-image: url("https://miro.medium.com/max/1400/1*ICjyqOHmNAvhRTWecqhiWQ.gif");
+    /* background-image: url("http://slis.simmons.edu/blogs/unbound/files/2016/01/arcangel-super-mario-clouds.gif"); */
+     background-size:cover;
+    background-position: center; 
+    background-repeat: no-repeat;  
     height: 100vh;
     width: 100vw;
-
+    position: absolute;
   }
 
-  .button-container {
-    text-align: center;
-    font-family:'game_over'
+  .animatedheading {
+    animation-name: mover-encabezado;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    font-family: 'mario';
+    color: white;
+  font-size: 50px;
+  top: 50%;
+  left: 50%;
   }
+  
+  /* Define los keyframes de la animación */
+  @keyframes mover-encabezado {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(20px);
+    }
+  }
+
+/* .inner{
+  font-family: 'mario';
+  color: white;
+  text-align: center;
+  font-size: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  
+
+} */
+
 .startbtn {
+  font-family: "mario";
   margin-top: 20%;
     display:flexbox;
     padding: 12px 24px;
     font-size: 25px;
     font-weight: bold;
-    font-family:'Courier New', Courier, monospace;
+    /* font-family:'Courier New', Courier, monospace; */
     text-transform: uppercase;
-    color: rgb(41, 51, 92);
+    color: black;
     background-color: rgb(248, 250, 144);
-    border: none;
+    border: 1px;
     border-radius: 4px;
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease-in-out
   }
   
   .startbtn:hover {
-    background-color: rgb(46, 134, 171);
+    background-color:  rgb(248, 250, 144);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    transform: scale(1.2);
   }
   
   .startbtn:active {
-    background-color: rgb(41, 51, 92);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    background-color:  rgb(248, 250, 144);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
   }
 
-
+.find{
+  font-family: 'mario';
+  color: white;
+  text-shadow: 10px;
+}
   
  

@@ -1,8 +1,15 @@
+@font-face {
+    font-family: 'mario';
+    src: url("../fonts/Super Mario Bros. 2.ttf") format('truetype');
+}
+
 .pagination{
     background-color:  rgb(248, 250, 144);
+    font-size:18px ;
+    font-family: "mario";
     border: 1px solid black;
     border-radius: 15px;
     flex-wrap: wrap;
-    gap: 1em;
-   
+    gap: 4em;
+    
 }

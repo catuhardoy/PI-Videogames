@@ -1,11 +1,17 @@
+@font-face {
+    font-family: 'mario';
+    src: url("../fonts/Super Mario Bros. 2.ttf") format('truetype');
+}
+
 .mainContainer{
     display: flex;
+    
     /* /* flex-direction: row; */
     justify-content: space-around;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 50px;
-    color:rgb(58, 58, 58);
-   
-    background-image: url("http://slis.simmons.edu/blogs/unbound/files/2016/01/arcangel-super-mario-clouds.gif");
-    
-}
+    font-family: 'mario';
+    font-size: 25px;
+    color:black;
+    background-color: black;}
+    /* background-image: url("http://slis.simmons.edu/blogs/unbound/files/2016/01/arcangel-super-mario-clouds.gif"); */
+    /* background-image: url("https://miro.medium.com/max/1400/1*ICjyqOHmNAvhRTWecqhiWQ.gif")
+} */

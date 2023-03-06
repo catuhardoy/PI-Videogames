@@ -4,7 +4,7 @@ const {API_KEY} = process.env
 const {Op} = require("sequelize");
 require("dotenv").config();
 
-const filtrado = (v) =>{
+const filtrado = (v) =>{  // nuevamente uso la fn de filtrado
   return{
     id: v.id,
       name: v.name,
@@ -24,7 +24,7 @@ const filtrado = (v) =>{
 const getApiVideogames = async () => {
   
   let apiGames = [];
-  for (let i = 1; i < 6; i++) {
+  for (let i = 1; i < 6; i++) {  // le pido que me traiga 100 juegos. 20 x pag
     let allApiData = await axios.get(
       `https://api.rawg.io/api/games?key=${API_KEY}&page=${i}`
     );
@@ -49,7 +49,7 @@ const getDbVideogames = async()=>{
       }
     });
 };
-const getAllVideogames = async ()=> {
+const getAllVideogames = async ()=> { // concateno la informacion que obtuve de la bd y la api
   const allApiVideogames = await getApiVideogames()
   const allDbVideogames = await getDbVideogames()
   return allApiVideogames.concat(allDbVideogames)
@@ -68,7 +68,7 @@ const getApiVideogamesByName = async (name)=> {
 
 const getDbVideogamesByName = async (name) => {
   let videogamesByName = await Videogame.findAll({
-    // attributes: ["id", "name", "rating", "background_image", "created"],
+    // attributes: ["id", "name", "rating", "background_image", "created"], op.substring es para q incluya el nombre en la busqueda. puedo incluir parte de eso q se escribe o toodo
     where: {
       name: {
         [Op.substring]: name,
@@ -76,7 +76,7 @@ const getDbVideogamesByName = async (name) => {
     },
     include: [
       {
-        model: Genre,
+        model: Genre,  // pido al modelo de generos, solo el nombre y lo incluyo en atributos
         attributes: ["name"],
         through: {
           attributes: [],
@@ -90,7 +90,7 @@ const getDbVideogamesByName = async (name) => {
 const getVideogamesByName = async(name)=>{
   const apiVideogamesByName = await getApiVideogamesByName(name);
   const dbVideogamesByName = await getDbVideogamesByName(name)
-  return [...apiVideogamesByName, ...dbVideogamesByName]
+  return [...apiVideogamesByName, ...dbVideogamesByName] // estos resultados concatenados se exportan para usar en el handler
 }
 
 

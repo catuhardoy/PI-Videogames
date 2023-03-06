@@ -63,14 +63,16 @@ const Home = ()=>{
     return(
         
     <div className={style.bodyhome}>
-        <div className={style.bodyhome}>
-            <Link to = "/create" className={style.starthome}>CREATE NEW VIDEOGAME</Link>
+
+        <div>
+            <br />
+            <Link to = "/create" className={style.btncreate}>CREATE NEW VIDEOGAME</Link>
                 <h1 key="home">
                    </h1>
-                <br />
+                <div className={style.imgcontainer}> <img src = "https://i.pinimg.com/originals/33/35/c7/3335c7f813edf600d5e56d93d00c3500.gif"></img></div>
 
            
-            <button onClick = {e => {handleClick(e)}} className = {style.starthome} >
+            <button onClick = {e => {handleClick(e)}} className = {style.btnreload} >
                 Reload Videogames
             </button>
             </div> 
@@ -85,7 +87,7 @@ const Home = ()=>{
                     </div>    
             <div>
                 <select className={style.starthome} onChange={(e) => handleSort(e)} >
-                    <option value="">Select</option> 
+                    <option value="">ALPHABETICAL</option> 
                     <option value="asc">A to Z </option>                                        
                     <option value="desc">Z to A</option>
                 </select>
@@ -99,7 +101,7 @@ const Home = ()=>{
                 </select>
 
                 <select className={style.starthome} onChange={(e) => handleFilterCreated(e)} >
-                    <option value="">Select</option> 
+                    <option value="">EXSISTENT/CREATED</option> 
                     <option value="all">All Videogames</option>
                     <option value="created">Created Videogames</option>
                     <option value="existent">Existent Videogames</option>
@@ -110,6 +112,7 @@ const Home = ()=>{
                     <option value="high">Descendant</option>
                 </select>
             </div>
+                    <div class="spinner"></div>
 
                  <CardsContainer 
 

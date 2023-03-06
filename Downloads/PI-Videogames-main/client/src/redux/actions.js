@@ -11,7 +11,9 @@ export const FILTER_CREATED = 'FILTER_CREATED';
 export const ORDER_BY_NAME = 'ORDER_BY_NAME';
 export const POST_VIDEOGAME = 'POST_VIDEOGAME'; 
 export const ORDER_BY_RATING = 'ORDER_BY_RATING';
-export const GET_DETAIL = "GET_DETAIL"
+export const GET_DETAIL = "GET_DETAIL";
+export const DETAIL_REMOVE = "DETAIL_REMOVE";
+export const DELETE_VIDEOGAME = "DELETE_VIDEOGAME"
 
 export const getAllVideogames = () => {
     return async function(dispatch) { //espera la info de axios y desp despacha la action al reducer
@@ -86,6 +88,23 @@ export const getDetail = (id) => {
                 return dispatch ({type: "GET_DETAIL", payload: apiData.data});
                 
             }
-        };
+};
+
+export function detailRemove(payload){
+    return{
+      type: 'DETAIL_REMOVE',
+      payload: payload
+    }
+};
+
+export function deleteVideogame(id){
+    return async function (dipatch) {
+        try {
+            await axios.delete(`/api/videogame/${id}`)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+  }
 
     

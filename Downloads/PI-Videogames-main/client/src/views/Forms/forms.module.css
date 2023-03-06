@@ -1,36 +1,51 @@
+
+@font-face {
+  font-family: 'mario';
+  src: url("../fonts/Super Mario Bros. 2.ttf") format('truetype')
+}
 .bodyforms {
-    
-background-color:  rgb(248, 250, 144);
+/* background-color: black;
 height: 100vh;
 width: 100vw;
-font-family:'Courier New', Courier, monospace;
-background-image:url("https://media1.giphy.com/media/gjU45Okcya42ECwmCS/giphy.gif?cid=6c09b952693bfe9c0ca6b5fa8692f8da0cc6b244e436e090&rid=giphy.gif&ct=s");
-background-position: 50px;
-background-repeat: no-repeat;
+font-family:'mario';
+color: white */
+background-image: url("https://miro.medium.com/max/1400/1*ICjyqOHmNAvhRTWecqhiWQ.gif");
+background-size:cover;
+background-position: center; 
+background-repeat: no-repeat;  
+height: 100vh;
+width: 100vw;
+position: absolute;
+font-family: 'mario';
+color: white;
+
+
 }
+
 
 .startforms {
     display: inline-block;
     padding: 12px 24px;
     font-size: 16px;
     font-weight: bold;
-    font-family:'Courier New', Courier, monospace;
+    font-family:'mario';
     text-transform: uppercase;
     color: #fff;
-    background-color: rgb(217, 114, 255);
+    background-color:  rgb(180, 142, 174);
     border: none;
     border-radius: 4px;
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  
   }
   
   .startforms:hover {
-    background-color: rgb(76, 224, 179);
+    background-color:black;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
   }
   
   .startforms:active {
-    background-color: rgb(76, 224, 179);
+    background-color:black;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
   }
 
@@ -38,6 +53,32 @@ background-repeat: no-repeat;
     font-family:'Courier New', Courier, monospace;
 
   }
+  .boxes{
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(243, 238, 238, 0.25) ;
+    margin-right: 15px;
+ 
+  }
+
+  .animatedheading {
+    animation-name: mover-encabezado;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    color: gold;
+  }
+  
+  /* Define los keyframes de la animación */
+  @keyframes mover-encabezado {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(20px);
+    }
+  }
+
+  
 
 
   

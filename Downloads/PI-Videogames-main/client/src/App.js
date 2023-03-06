@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="App">
-      {location.pathname !== "/" && <NavBar/>}
+      {location.pathname !== "/" && location.pathname !== "/create" && location.pathname!== "/detail/:id" && <NavBar/>}
       <Switch>    
       <Route exact path="/"> 
         <Landing/>

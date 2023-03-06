@@ -32,12 +32,12 @@ module.exports = (sequelize) => {
     },
     
     rating:{
-      type: DataTypes.INTEGER // check si no es INTEGER
+      type: DataTypes.INTEGER 
     },
 
     platforms:{
-      type: DataTypes.ARRAY(DataTypes.STRING), // .STRING // porque se usa este?
-      allowNull: true
+      type: DataTypes.ARRAY(DataTypes.STRING), 
+      allowNull: false
     },
     created:{
       type: DataTypes.BOOLEAN,

@@ -23,12 +23,14 @@ const [name, setName] = useState("") //espero un string name
    return (
       <div className={style.back}>
          <input
+        className= {style.search}
          type='text' 
          value = {name} 
          placeholder = 'Search'
          onChange = {(e) => handleChange(e)} />
 
-      <button className={style.searchbtn} type = "submit" onClick ={(e)=> handleSubmit(e)}>SEARCH VIDEOGAME</button>
+      <button className={style.searchbtn} type = "submit" onClick ={(e)=> handleSubmit(e)}>SEARCH</button>
+      <br />
       </div>
    );
 }
