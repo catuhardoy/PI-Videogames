@@ -94,91 +94,15 @@ const getVideogamesByName = async(name)=>{
 }
 
 
-// const getApiVideogameById = async (id) =>{
-    
-//   const videogameApiId = await axios.get(`https://api.rawg.io/api/games/${id}?key=${API_KEY}`)
-  
-//   const videogameId = [
-//     { 
-//      id: videogameApiId.data.id,
-//      name: videogameApiId.data.name,
-//      rating: videogameApiId.data.rating,
-//      background_image: videogameApiId.data.background_image,
-//      released: videogameApiId.released,
-//      description: videogameApiId.description,
-//      created: false,
-//      genres: videogameApiId.data.genres.map((g)=>{
-//          return{
-//              name: g.name
-//          }
-//      }),
-//      platforms: videogameApiId.data.platforms.platform.map((p)=>{
-//        return{
-//          name: p.platform.name
-//        }
-//      })
-//   }
-// ]
-//   return videogameId
-// }
-
-
-// const getDbVideogameById = async (id)=>{
-
-//   const dbId = await Videogame.findByPk(id, {
-//     include: [
-//       {
-//         model: Genre,
-//         attributes: ["name"],
-//         through: {
-//           attributes: [],
-//         },
-//       },
-//     ],
-//   });
-//   return dbId
-// };
-
-// const getVideogamesById = async(name)=>{
-//   const apiVideogamesById = await getApiVideogameById(name);
-//   const dbVideogamesById = await getDbVideogameById(name)
-//   return [...apiVideogamesById, ...dbVideogamesById]
-// }
-
-
-// const createVideogame = async (
-//   name,
-//   description,
-//   released,
-//   rating,
-//   background_image, 
-//   genres,
-//   created,
-//   platforms)=> {
-
-//     const newVideogame = await Videogame.create(
-//       {
-//         name,
-//         description,
-//         released,
-//         rating,
-//         background_image,
-//         platforms,
-//         created
-//       });
-
-//     const dbGenre = await Genre.findAll({
-//       where: {
-//         name: genres
-//       }
-//     })
-//     if(!dbGenre) dbGenre = await Genre.create({name: genres})
-
-//     await newVideogame.addGenre(dbGenre)
-   
-//   }
- 
-
 module.exports = {getAllVideogames, 
   getVideogamesByName
  }
+
+
+ //const getPlatforms = async()=>{
+//    let videgames = getAllVideogames()
+
+//  let platform =  videogames.platforms.map((p)=> p.platform.name)
+//    return platform
+
+//  }

@@ -12,3 +12,10 @@ try {
 };
 
 module.exports = {getGenresHanlder}
+
+
+//const getPlatformsHanlder = async(req, res)=>{
+ //   try{
+
+    
+//}

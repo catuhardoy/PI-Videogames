@@ -21,7 +21,11 @@ const CardsContainer = ({videogamesPerPage, currentPage, totalVideogames})=>{
     return (
         <div className={style.container}>
            
-
+           {!videogames.length && (
+        <div className={style.loaderWrapper}>
+          <div className={style.loader}><div></div><div></div><div></div><div></div></div>
+        </div>
+      )}
             
            {videogames.slice(start, end).map((videogame) => (
                 <Card

@@ -18,6 +18,8 @@ const initialState = {
     //  inicio el estado en un array vacio
 }
 
+// El reducer me sirve para manipular la informacion que viene de las actions.
+
 const RootReducer = (state = initialState, action)=>{  // funcion que sabe que hacerle al estado global, tiene que saber qué estado modifica y recibe una action
     switch(action.type){
         case GET_ALL_VIDEOGAMES:
@@ -89,7 +91,7 @@ const RootReducer = (state = initialState, action)=>{  // funcion que sabe que h
         ...state,
         videogames: sortedArray,
       };
-    case ORDER_BY_RATING:
+    case ORDER_BY_RATING:                     
         let sortByRating = 
         action.payload === "low"
           ? state.videogames.sort(function (a, b) {

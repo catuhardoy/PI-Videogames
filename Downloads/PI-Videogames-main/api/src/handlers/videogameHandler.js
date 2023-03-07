@@ -1,4 +1,4 @@
-const {getVideogameById, getVideogameDbId} = require ("../controllers/videogameController")
+const {getVideogameById, getVideogameDbId, deleteVideogame} = require ("../controllers/videogameController")
 
 const getVideogameHandler = async (req, res)=> {
     const {id} = req.params;

@@ -44,7 +44,7 @@ const getVideogameDbId = async (id)=>{
 }
 
 const deleteVideogame = async (id)=>{
-  if(!id) throw new Error ("missing ID");
+  // if(!id) throw new Error ("missing ID");
   await Videogame.destroy({
       where: {id: id}
   })

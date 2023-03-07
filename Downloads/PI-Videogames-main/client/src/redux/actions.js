@@ -19,7 +19,7 @@ export const getAllVideogames = () => {
     return async function(dispatch) { //espera la info de axios y desp despacha la action al reducer
         const apiData = await axios.get('http://localhost:3001/videogames'); // aca me conecto con el servidor (no con la bdd)
                                                                                 // const videogames = apiData.data; la saco y pongo en el payload directamente 
-       return dispatch ({type: GET_ALL_VIDEOGAMES, payload: apiData.data}); // ahora armo la accion y es despachada con un payload
+       return dispatch ({type: GET_ALL_VIDEOGAMES, payload: apiData.data}); // ahora armo la accion y es despachada con un payload. //yo para renderizar mi action necesito el dispatch. El dispatch es lo que despacha el pedido.
     };
 };
 

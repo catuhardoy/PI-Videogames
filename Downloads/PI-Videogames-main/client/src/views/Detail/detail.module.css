@@ -10,8 +10,8 @@
 
 .detailcont{
     background-color: black;
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
+    text-align:center;
+   
     border: 2px;
     display: flex;
     color: white
@@ -25,9 +25,16 @@
 .name{
   font-family: 'video';
 
-}
-.detaildesc{
+
+} 
+.description{
+  border: 2px white;
   font-family: 'video';
+  text-align: center;
+  margin-right: 180px;
+  margin-left: 180px;
+  margin-top: 1rem;
+ 
 
 }
 

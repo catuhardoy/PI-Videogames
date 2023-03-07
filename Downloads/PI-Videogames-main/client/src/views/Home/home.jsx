@@ -29,7 +29,7 @@ const Home = ()=>{
     },[dispatch]);
 
 
-    function handleClick(e){
+    function handleClick(e){  // el e que recibe es el click. Le digo que despache GetAllvideogames()
         e.preventDefault();
         dispatch(getAllVideogames());
     }
@@ -112,7 +112,7 @@ const Home = ()=>{
                     <option value="high">Descendant</option>
                 </select>
             </div>
-                    <div class="spinner"></div>
+        
 
                  <CardsContainer 
 

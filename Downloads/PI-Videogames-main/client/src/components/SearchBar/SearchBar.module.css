@@ -10,7 +10,7 @@
 
 .search {
    
-    padding: 7px 7px;
+    padding: 10px 7px;
     border-radius: 1px;
     font-size: 15px;
     font-family: 'Courier New', Courier, monospace;
@@ -21,7 +21,7 @@
   
   .searchbtn {
     display: inline-block;
-    padding: 8px 15px;
+    padding: 20px 25px;
     font-size: 12px;
     font-weight: bold;
     font-family:'mario';

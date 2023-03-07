@@ -47,25 +47,25 @@ const Detail = () =>{
                     <br />
                     <p className={style.name}>ID: {detail.id}</p>
                     <img className={style.img} src={detail.background_image} alt={detail.name} width= "200px" height = "200px" />
-                    <p className={style.name}>Rating ⭑ {detail.rating}</p>
+                    <p className={style.name}> ⭑ Rating ⭑ {detail.rating}</p>
                     
                     <h1 className={style.name}> {detail.name}</h1>
                     <p className={style.name}>Released: {detail.released}</p> 
                     {detail.description && (
-                            <h4 className={style.detaildesc}> <h4></h4>{detail.description.replace(/[<p></p>]/g, '')}</h4>
+                            <h4 className={style.description}>{detail.description.replace(/[<p></p>]/g, '')}</h4>
                         )}
                     
-                        <h3 className={style.name}>Genres : </h3>
+                        <h3 className={style.name}>GENRES : </h3>
                             {detail.genres?.map((genre)=>(   
                             <p className={style.name}>{genre.name} </p>
                     ))} 
                     
-                    <h3 className={style.name}>Platforms : </h3>
-                    <p>
+                    <h3 className={style.name}>PLATFORMS :  </h3>
+                    
                         {detail.platforms?.map((platform)=>(
                             <p className={style.name}>{platform}</p>
                         ))}
-                    </p>
+                
                    <h3>{detail.created && <button className={style.detailbtn} onClick={deleteVideo}>X</button>}</h3> 
                 
                 </div> 

@@ -28,8 +28,7 @@ const getVideogamesHandler = async (req, res) => {
     }
 }
 
-         
-//    
+     
 
 const createVideogamesHandler = async (req, res)=> {
     let {name,
@@ -62,8 +61,7 @@ const createVideogamesHandler = async (req, res)=> {
     await newVideogame.addGenre(dbGenre)
     res.status(201).send(newVideogame)
          
-}// el paginado el estado, el estado tengo q setearlo en uno
-//quiero ver el q tiene rating lo q tiene entre 4 y 5
+}
 
 
 
